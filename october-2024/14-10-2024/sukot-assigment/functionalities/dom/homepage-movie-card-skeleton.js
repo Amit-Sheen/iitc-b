@@ -17,26 +17,29 @@ const buildSkeletonMovieCard = (movie, movieCardDiv) => {
   // Set the inner HTML for the movie card, including image, title, rating, and action buttons.
   movieCardDiv.innerHTML = `
   <div>
-    <a href="#" class="img-trailer-link">
-      <img src="${image}" alt="movie-img" class="movie-img">
+    <a href="#" class="img-trailer-link" style="--src: ${image}" >
+      // <img src="${image}" alt="movie-img" class="movie-img">
+      <div class="img-container">
+        <a href="#" class="play-button-btn">
+          <img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img">
+        </a>
+        <div>
+        <button class="white-share-trailer-btn">
+          <img src="../images/user-activity/white-share-icon.svg" alt="white-share-img" class="white-share-img">
+        </button>
+        <button class="white-heart-trailer-btn">
+          <img src="../images/user-activity/white-heart-icon.svg" alt="white-heart-img" class="white-heart-img">
+        </button>
+        <button class="white-data-btn">
+          <img src="../images/user-activity/white-data-icon.svg" alt="white-data-img" class="white-data-img">
+        </button>
+      </div>
     </a>
-    <h1 class="title">${movieName}</h1>
-    <div class="img-container">
-    <p class="rating-stars">${resultRatingImg}</p>
-      <a href="#" class="play-button-btn">
-        <img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img">
-      </a>
-      <button class="white-share-trailer-btn">
-        <img src="../images/user-activity/white-share-icon.svg" alt="white-share-img" class="white-share-img">
-      </button>
-      <button class="white-heart-trailer-btn">
-        <img src="../images/user-activity/white-heart-icon.svg" alt="white-heart-img" class="white-heart-img">
-      </button>
-      <button class="white-data-btn">
-        <img src="../images/user-activity/white-data-icon.svg" alt="white-data-img" class="white-data-img">
-      </button>
-      <h2 class="rating-number-txt">${roundMovieRating(movie.vote_average)}</h2>
+    <div>
+      <h3 class="rating-number-txt">${roundMovieRating(movie.vote_average)}</h3>
+      <h2 class="title">${movieName}</h3>
     </div>
+    <p class="rating-stars">${resultRatingImg}</p>
   </div>
   `;
   return movieCardDiv;
